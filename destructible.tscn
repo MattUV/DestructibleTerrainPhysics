@@ -1,0 +1,198 @@
+[gd_scene load_steps=16 format=1]
+
+[ext_resource path="res://destructible.gd" type="Script" id=1]
+[ext_resource path="res://block.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Images/ground1-32.png" type="Texture" id=3]
+[ext_resource path="res://Images/ground2-32.png" type="Texture" id=4]
+[ext_resource path="res://Images/ground3-32.png" type="Texture" id=5]
+[ext_resource path="res://Images/box-256.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 128, 128 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 64, 64 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 4, 4 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2, 2 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 1, 1 )
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 0.5, 0.5 )
+
+[node name="Destructible" type="Node2D"]
+
+script/script = ExtResource( 1 )
+min_size = 4
+
+[node name="Shapes" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="Shape256" type="CollisionShape2D" parent="Shapes"]
+
+visibility/visible = false
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = -1
+
+[node name="Shape128" type="CollisionShape2D" parent="Shapes"]
+
+visibility/visible = false
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = -1
+
+[node name="Shape64" type="CollisionShape2D" parent="Shapes"]
+
+visibility/visible = false
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = -1
+
+[node name="Shape32" type="CollisionShape2D" parent="Shapes"]
+
+visibility/visible = false
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Shape16" type="CollisionShape2D" parent="Shapes"]
+
+visibility/visible = false
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Shape8" type="CollisionShape2D" parent="Shapes"]
+
+visibility/visible = false
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Shape4" type="CollisionShape2D" parent="Shapes"]
+
+visibility/visible = false
+shape = SubResource( 7 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Shape2" type="CollisionShape2D" parent="Shapes"]
+
+visibility/visible = false
+shape = SubResource( 8 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Shape1" type="CollisionShape2D" parent="Shapes"]
+
+visibility/visible = false
+shape = SubResource( 9 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Blocks" type="Node2D" parent="."]
+
+[node name="block" parent="Blocks" instance=ExtResource( 2 )]
+
+editor/display_folded = true
+transform/pos = Vector2( 304, 160 )
+
+[node name="block1" parent="Blocks" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 336, 160 )
+
+[node name="block2" parent="Blocks" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 368, 160 )
+
+[node name="block3" parent="Blocks" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 368, 192 )
+
+[node name="block4" parent="Blocks" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 304, 192 )
+
+[node name="block5" parent="Blocks" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 336, 192 )
+
+[node name="block6" parent="Blocks" instance=ExtResource( 2 )]
+
+editor/display_folded = true
+transform/pos = Vector2( 304, 224 )
+
+[node name="Sprite" parent="Blocks/block6"]
+
+texture = ExtResource( 3 )
+
+[node name="block7" parent="Blocks" instance=ExtResource( 2 )]
+
+editor/display_folded = true
+transform/pos = Vector2( 336, 224 )
+
+[node name="Sprite" parent="Blocks/block7"]
+
+texture = ExtResource( 4 )
+
+[node name="block8" parent="Blocks" instance=ExtResource( 2 )]
+
+editor/display_folded = true
+transform/pos = Vector2( 368, 224 )
+
+[node name="Sprite" parent="Blocks/block8"]
+
+texture = ExtResource( 5 )
+
+[node name="block9" parent="Blocks" instance=ExtResource( 2 )]
+
+editor/display_folded = true
+transform/pos = Vector2( 592, 160 )
+mass = 250.0
+size = 256
+mass = 250.0
+
+[node name="Sprite" parent="Blocks/block9"]
+
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 256, 256 )
+
+
+[editable path="Blocks/block6"]
+[editable path="Blocks/block7"]
+[editable path="Blocks/block8"]
+[editable path="Blocks/block9"]

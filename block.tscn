@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://block.gd" type="Script" id=1]
+[ext_resource path="res://Images/box-32.png" type="Texture" id=2]
+
+[node name="block" type="RigidBody2D"]
+
+transform/pos = Vector2( 368, 176 )
+input/pickable = true
+collision/layers = 3
+collision/mask = 1
+mode = 0
+mass = 10.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+size = 32
+mass = 10.0
+
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -1.04904e-05, -2.86102e-06 )
+transform/scale = Vector2( 3.2, 3.2 )
+rect = Rect2( -10, -10, 20, 20 )
+
+
